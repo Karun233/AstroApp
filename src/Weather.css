@@ -1,0 +1,36 @@
+/* Weather.css */
+.weather-container {
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    margin: 2% auto;
+  }
+  
+  .weather-form {
+    margin-bottom: 20px;
+  }
+  
+  .weather-input {
+    padding: 8px;
+    margin-right: 10px;
+  }
+  
+  .weather-button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .weather-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .weather-info {
+    margin-top: 20px;
+  }
+  
+  .weather-info p {
+    margin-bottom: 10px;
+  }
+  
