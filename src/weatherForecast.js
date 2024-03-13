@@ -50,6 +50,7 @@ const WeatherForecast = () => {
           {filterForecastFor12PM(weatherData.list).map((forecast, index) => (
             <div className = 'weather-box' key={index}>
               <p>Day: {getDayOfWeek(forecast.dt_txt)}</p>
+              <img src={`https://openweathermap.org/img/wn/${forecast.weather[0].icon}.png`} alt="Weather Icon" />
               <p>Temperature: {forecast.main.temp}°C</p>
               <p>Description: {forecast.weather[0].description}</p>
               <p>Feels like : {forecast.main.feels_like}°C</p>
