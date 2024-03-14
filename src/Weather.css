@@ -1,0 +1,64 @@
+/* Weather.css */
+
+.weather-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 600px;
+    margin: 2% auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    background-color: #33333b; /* Background color for the container */
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    color: white;
+  }
+  
+  .weather-form {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .weather-input {
+    padding: 8px;
+    width: calc(100% - 20px);
+    max-width: 300px;
+    background-color: #333;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .weather-input:hover {
+    background-color: #444;
+  }
+  
+  .weather-box-container {
+    background-color: #33333b; /* Background color for the weather boxes */
+    padding: 20px; 
+    border-radius: 10px; 
+    color: white;
+  }
+  
+  .weather-info {
+    padding: 10px;
+  }
+  
+  .weather-info p {
+    margin-bottom: 5px;
+  }
+  
+  .weather-image {
+    width: 90px;
+    margin: 0 auto;
+  }
+  
+  .weather-image-main {
+    width: 100px;
+    margin: 0 auto;
+  }
+  
