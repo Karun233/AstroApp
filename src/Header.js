@@ -1,19 +1,23 @@
+// Header.js
 import './Header.css';
-
-function Header() {
-  return (
-    <header className="app-header">
-      <h1 className="app-title">Astronomy Weather App</h1>
-      <nav>
-        <ul className="nav-list">
-          <li className="nav-item">About</li>
-          <li className="nav-item">Today's Weather</li>
-          <li className="nav-item">Moonphase</li>
-          <li className="nav-item">Cloud Coverage</li>
-        </ul>
-      </nav>
-    </header>
-  );
-}
+function Header(){
+return (
+  <header className="header">
+    <div className="header-left">
+      <div className="hamburger-menu">
+        {/* Hamburger menu icon */}
+        <div className="bar"></div>
+        <div className="bar"></div>
+        <div className="bar"></div>
+      </div>
+    </div>
+    <div className="header-right">
+      {/* Search bar */}
+      <input className="search-bar"  type="text"  placeholder="   Search for Location..." />
+      <button>Search</button>
+    </div>
+  </header>
+);
+};
 
 export default Header

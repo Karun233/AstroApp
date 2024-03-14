@@ -3,6 +3,7 @@ import WeatherForecast from './weatherForecast';
 function App() {
   return(
     <>
+    <Header></Header>
     <WeatherForecast></WeatherForecast>
     </>
   );
