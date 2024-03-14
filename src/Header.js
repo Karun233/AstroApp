@@ -1,19 +1,34 @@
 import './Header.css';
+// Header.js
+import React, { useState } from 'react';
 
-function Header() {
+const Header = ({onSearch}) => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleInputChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+  const handleSearch = () => {
+    onSearch(searchTerm);
+
+  }
   return (
-    <header className="app-header">
-      <h1 className="app-title">Astronomy Weather App</h1>
-      <nav>
-        <ul className="nav-list">
-          <li className="nav-item">About</li>
-          <li className="nav-item">Today's Weather</li>
-          <li className="nav-item">Moonphase</li>
-          <li className="nav-item">Cloud Coverage</li>
-        </ul>
-      </nav>
+    <header className="header">
+      <div className="header-left">
+        <div className="hamburger-menu">
+          {/* Hamburger menu icon */}
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
+      </div>
+      <div className="header-right">
+        {/* Search bar */}
+        <input className="search-bar" value={searchTerm} type="text" onChange={handleInputChange} placeholder="   Search for Location..." />
+        <button onClick={handleSearch}>Search</button>
+      </div>
     </header>
   );
-}
+};
 
-export default Header
+export default Header;

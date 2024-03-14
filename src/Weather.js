@@ -3,7 +3,7 @@ import axios from 'axios';
 import './Weather.css'; // Import the CSS file
 
 
-const Weather = () => {
+const Weather = ({searchTerm}) => {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
 
@@ -22,7 +22,7 @@ const Weather = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [searchTerm]);
 
   const handleInputChange = (e) => {
     setCity(e.target.value);

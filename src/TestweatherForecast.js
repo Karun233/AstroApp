@@ -3,24 +3,26 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './weatherForecast.css'; // Import CSS file
 
-const WeatherForecast = () => {
-  const [weatherData, setWeatherData] = useState(null);
-
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&units=metric&appid=0eb6fccdfb4dc326cd05c87f99c91444`
-      );
-      setWeatherData(response.data);
-      console.log(response.data); // You can see all the weather data in the console log
-    } catch (error) {
-      console.error(error);
-    }
-  };
+const WeatherForecast = ( coordinates ) => {
+  const [weatherData, setWeatherData] = useState([]);
 
   useEffect(() => {
-    fetchData();
+
+    const fetchData = async () => {
+      try {
+        const apiKey = '0eb6fccdfb4dc326cd05c87f99c91444'
+        const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=0eb6fccdfb4dc326cd05c87f99c91444`
+  
+        const response = await axios.get(apiUrl);
+  
+        setWeatherData(response.data);
+        console.log(response.data); // You can see all the weather data in the console log
+      } catch (error) {
+        console.error(error);
+      }
+    };
   }, []); // Fetch data once when the component mounts
+
 
   const filterForecastFor12PM = (forecastList) => {
     // Filter the forecast list to only include entries for 12 PM
