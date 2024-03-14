@@ -49,6 +49,7 @@ const Weather = () => {
         <>
         <div className = 'weather-info'>
           <h2>{weatherData.name}</h2>
+          <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`} alt="Weather Icon" />
           <p>Temperature: {weatherData.main.temp}°C</p>
           <p>Description: {weatherData.weather[0].description}</p>
           <p>Feels like : {weatherData.main.feels_like}°C</p>

@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './weatherForecast.css'; // Import CSS file
+import Weather from './Weather'
 
 const WeatherForecast = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -44,6 +45,9 @@ const WeatherForecast = () => {
   return (
     <div className = 'weather-container'>
       {/* Display weather forecast data for 12 PM */}
+      <div className = 'weather-box'>
+        <Weather></Weather>
+      </div>
       {weatherData ? (
         <>
           {/* Map over filtered weather data to display forecast details */}
