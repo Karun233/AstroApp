@@ -7,7 +7,7 @@ function Header() {
       <div className="header-left">
         <div className="hamburger-menu">
           {/* Hamburger menu icon */}
-          <div className="bar"></div>
+          <div className="bar1"></div>
           <div className="bar"></div>
           <div className="bar"></div>
         </div>
