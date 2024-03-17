@@ -1,18 +1,27 @@
-.weather-container {
-    display: flex;
-    flex-wrap: nowrap; /* Prevent wrapping */
-    justify-content: center;
-}
+/* weatherForecast.css */
 
+.weather-container-2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 600px; /* Fixed width */
+    margin: 2% auto;
+    display: grid; /* Use CSS grid */
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-gap: 10px; /* Gap between grid items */
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    color: white;
+}
+  
 .weather-box {
-    flex: 1; /* Take up all available space */
     padding: 10px;
-    background-color: #434252;
-    border: 0px solid #cccccc00;
-    border-radius: 5px;
-    margin-right: 10px; /* Add some spacing between boxes */
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    color: white;
 }
 
-.weather-box:last-child {
-    margin-right: 0; /* Remove margin from the last box */
+.weather-box img {
+    width: 60px; /* Adjust the width of the weather icon */
+    height: 50px; /* Adjust the height of the weather icon */
 }

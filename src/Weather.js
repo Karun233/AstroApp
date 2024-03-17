@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Weather.css'; // Import the CSS file
+import sunnyImage from './Assets/sunny.png'; // Image for Clear sky
+import cloudyImage from './Assets/cloudy.png'; // Image for Clouds
+import lightRainImage from './Assets/light_rain.png'; // Image for Light Rain
+import rainyImage from './Assets/rainy.png'; // Image for Rain
+import drizzleImage from './Assets/drizzle.png'; // Image for Drizzle
+import thunderstormImage from './Assets/thunderstorm.png'; // Image for Thunderstorm
+import mistImage from './Assets/mist.png'; // Image for Mist
+import showerRainImage from './Assets/shower_rain.png'; // Image for Shower Rain
+import defaultImage from './Assets/default.png'; // Default image (if weather condition is not matched)
+
 
 const Weather = ({ onCityChange }) => {
   const [city, setCity] = useState('');
@@ -24,9 +34,35 @@ const Weather = ({ onCityChange }) => {
     setCity(e.target.value);
   };
 
-  const getWeatherIconUrl = (iconCode) => {
-    return `https://openweathermap.org/img/wn/${iconCode}.png`;
+ 
+  const getWeatherIcon = (weatherCondition, weatherDescription) => {
+    switch (weatherCondition) {
+      case 'Clear':
+        return defaultImage;
+      case 'Clouds':
+        return cloudyImage;
+      case 'Rain':
+        if (weatherDescription && weatherDescription.toLowerCase().includes('light rain')) {
+          return lightRainImage;
+        } else {
+          return rainyImage;
+        }
+      case 'Drizzle':
+        return drizzleImage;
+      case 'Thunderstorm':
+        return thunderstormImage;
+      case 'Mist':
+        return mistImage;
+      case 'Shower Rain':
+        return showerRainImage;
+      case 'Sunny':
+        return sunnyImage;
+      default:
+        return defaultImage;
+    }
   };
+  
+  
 
   return (
     <div className='weather-container'>
@@ -43,18 +79,13 @@ const Weather = ({ onCityChange }) => {
       {weatherData && (
         <div className='weather-box-container'>
           <div className='weather-info'>
-            <h2>{weatherData.name}</h2>
+            <h2>Today</h2>
             <img
               className='weather-image'
-              src={getWeatherIconUrl(weatherData.weather[0].icon)}
+              src={getWeatherIcon(weatherData.weather[0].main)}
               alt="Weather Icon"
             />
-            <p>Temperature: {weatherData.main.temp}°C</p>
-            <p>Description: {weatherData.weather[0].description}</p>
-            <p>Feels like: {weatherData.main.feels_like}°C</p>
-            <p>Humidity: {weatherData.main.humidity}%</p>
-            <p>Pressure: {weatherData.main.pressure}</p>
-            <p>Wind Speed: {weatherData.wind.speed}m/s</p>
+            <p> <h1><b>{weatherData.name}</b></h1> {weatherData.main.temp}°C</p>
           </div>
         </div>
       )}
