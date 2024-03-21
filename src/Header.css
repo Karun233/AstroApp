@@ -51,14 +51,13 @@
   display: block;
 }
 
-.header-right ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.header-right ul li {
+  display: inline-block;
+  margin-right: 20px; /* Add some space between list items */
 }
 
-.header-right ul li {
-  margin-bottom: 10px;
+.header-right ul li:last-child {
+  margin-right: 0; /* Remove margin from the last list item */
 }
 
 .header-right ul li a {

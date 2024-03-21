@@ -1,5 +1,5 @@
-// Header.js
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link
 import './Header.css';
 
 function Header() {
@@ -22,10 +22,8 @@ function Header() {
       <nav className={`header-right ${menuOpen ? 'open' : ''}`}>
         {/* Additional menu items */}
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          {/* Add more menu items as needed */}
+          <li><Link to="/">Home</Link></li> {/* Use Link instead of a */}
+          <li><Link to="/AstroData">AstroData</Link></li> {/* Use Link instead of a */}
         </ul>
       </nav>
     </header>
